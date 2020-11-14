@@ -27,4 +27,37 @@ function fizzbuzz(n) {
     }
 }
 
-console.log(fizzbuzz(15));
+// Tests suite:
+console.log("Test fizzbuzz for an integer lesser or equal to zero:");
+console.log(
+    "Result:", fizzbuzz(-1),
+    "Expected: []"
+);
+console.log(
+    "Result:", fizzbuzz(0),
+    "Expected: []"
+);
+
+console.log("Test fizzbuzz without Fizz or Buzz:");
+console.log(
+    "Result:", fizzbuzz(2),
+    'Expected: ["1", "2"]'
+);
+
+console.log("Test fizzbuzz with a Fizz:");
+console.log(
+    "Result:", fizzbuzz(3),
+    'Expected: ["1", "2", "Fizz"]'
+);
+
+console.log("Test fizzbuzz with a Fizz and a Buzz:");
+console.log(
+    "Result:", fizzbuzz(5),
+    'Expected: ["1", "2", "Fizz", "4", "Buzz"]'
+);
+
+console.log("Test fizzbuzz with a FizzBuzz:");
+console.log(
+    "Result:", fizzbuzz(15),
+    'Expected: ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]'
+);
