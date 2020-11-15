@@ -4,10 +4,12 @@ A compilation of algorithms, interviews questions and classic patterns - Nov 202
 
 ## Classic Puzzles
 
-### Puzzles with modulo
+This folder contains a README with some __techniques and tips__ to solve code puzzles.
 
-- __fizzbuzz__ solved in Python (TDD) and JS
+### Puzzles with modulo (multiples and dividers)
+
+- __FizzBuzz__ solved in Python (TDD) and JS
 
 ### Puzzles with arrays
 
-- __common_elements__ solved in Python (TDD)
+- __Common elements in two sorted array__ solved in Python (TDD) and JS
