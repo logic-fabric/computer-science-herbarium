@@ -7,3 +7,7 @@ This structural pattern allows objects with __incompatible interfaces to collabo
 3. Upon receiving a call, the adapter passes the request to the second object, but in a format and ordered as the second objects expects.
 
 It is even possible to create a two-ways adapter that can convert the calls in both directions.
+
+### Structure of an Adapter
+
+![Structure of an Adapter](./adapter.png)

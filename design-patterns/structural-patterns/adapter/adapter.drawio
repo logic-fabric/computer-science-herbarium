@@ -1,0 +1,94 @@
+<mxfile host="65bd71144e" modified="2020-11-21T05:20:51.797Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.1 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" etag="qgUcPH4r51pT0-HkyOPz" version="13.6.5">
+    <diagram id="U3TSOpRmrltZot66hm7w" name="Page-1">
+        <mxGraphModel dx="2812" dy="599" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="24" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;fontSize=14;fontColor=#00232A;strokeColor=#00232A;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="10" target="46" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="-330" y="260" as="sourcePoint"/>
+                        <mxPoint x="-190" y="220" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;1.&lt;/font&gt;&lt;/b&gt; The &lt;b&gt;Client&lt;/b&gt; is a class&lt;br&gt;that contains the existing&lt;br&gt;business logic of the&lt;br&gt;program." style="html=1;strokeWidth=2;fontSize=14;align=left;fillColor=#FDE4C9;labelBorderColor=none;fontColor=#391d00;spacing=16;spacingBottom=8;gradientColor=#ffffff;gradientDirection=east;strokeColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-980" y="100" width="200" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="" style="endArrow=open;endFill=0;endSize=12;html=1;fontSize=14;fontColor=#391d00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#00232A;strokeWidth=2;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="11" target="61" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="112.5" y="440" as="sourcePoint"/>
+                        <mxPoint x="520" y="210" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="36" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;color: rgb(0 , 35 , 42)&quot;&gt;special_data = concert_to_service_format(data)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;return adaptee.service_method(data)&lt;/span&gt;&lt;/div&gt;" style="html=1;strokeWidth=2;fontSize=14;fontColor=#391d00;strokeColor=none;fillColor=#CAF0F8;spacing=4;" parent="1" vertex="1">
+                    <mxGeometry x="-560" y="380" width="320" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="" style="endArrow=none;endFill=0;endSize=12;html=1;strokeColor=#00232A;fontSize=14;fontColor=#391d00;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" parent="1" source="36" target="10" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="30" y="220" as="sourcePoint"/>
+                        <mxPoint x="260" y="410" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="52" value="" style="endArrow=open;endFill=1;endSize=12;html=1;strokeColor=#00232A;fontSize=14;fontColor=#391d00;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;" parent="1" source="41" target="46" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="-640" y="181" as="sourcePoint"/>
+                        <mxPoint x="-560" y="180" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="59" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;2.&lt;/font&gt;&lt;/b&gt; The &lt;b&gt;Client Interface&lt;/b&gt; describes a protocol that&lt;br&gt;other classes must follow to be able to collaborate&lt;br&gt;with the client code." style="html=1;strokeWidth=2;fontSize=14;align=left;fillColor=#FDE4C9;labelBorderColor=none;fontColor=#391d00;spacing=16;spacingBottom=8;gradientColor=#ffffff;gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-760" y="60" width="360" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;3.&lt;/font&gt;&lt;/b&gt; The &lt;b&gt;Service&lt;/b&gt; is some&lt;br&gt;useful class (usually a 3rd&lt;br&gt;party or legacy).&lt;br&gt;The Client can't use this&lt;br&gt;class directly because it&lt;br&gt;has an incompatible&lt;br&gt;interface.&amp;nbsp;" style="html=1;strokeWidth=2;fontSize=14;align=left;fillColor=#FDE4C9;labelBorderColor=none;fontColor=#391d00;spacing=16;spacingBottom=8;gradientColor=#ffffff;gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-320" y="100" width="200" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;4.&lt;/font&gt;&lt;/b&gt; The &lt;b&gt;Adapter&lt;/b&gt; is a class that is able to work with both the Client&lt;br&gt;and the Service: it implements the Client interface, while wrapping&lt;br&gt;the Service object.&lt;br&gt;&lt;br&gt;The Adapter receives calls from the Client via the Adapter&lt;br&gt;interface and translates them into calls to the wrapped Service&lt;br&gt;object in a format it can understand." style="html=1;strokeWidth=2;fontSize=14;align=left;fillColor=#FDE4C9;labelBorderColor=none;fontColor=#391d00;spacing=16;spacingBottom=8;gradientColor=#ffffff;gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-560" y="450" width="440" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;5.&lt;/font&gt;&lt;/b&gt; The Client code doesn't get coupled to&lt;br&gt;the concrete Adapter class as long as it&lt;br&gt;works with the Adapter via the Client&lt;br&gt;interface.&lt;br&gt;&lt;br&gt;Thanks to this, you can introduce new types&lt;br&gt;of adapters into the program without&lt;br&gt;breaking the existing client code.&lt;br&gt;&lt;br&gt;This can be useful when the interface of the&lt;br&gt;Service class gets changed or replaced:&lt;br&gt;you can just create a new adapter class&lt;br&gt;without changing the client code." style="html=1;strokeWidth=2;fontSize=14;align=left;fillColor=#FDE4C9;labelBorderColor=none;fontColor=#391d00;spacing=16;spacingBottom=8;gradientColor=#ffffff;gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-980" y="350" width="300" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="Client" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#00232A;fillColor=#6DC0D2;strokeWidth=2;fontSize=14;strokeColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-760" y="159" width="120" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="41" vertex="1">
+                    <mxGeometry y="30" width="120" height="4" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="Client Interface" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#00232A;fillColor=#6DC0D2;strokeWidth=2;fontSize=14;strokeColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-560" y="160" width="160" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="46" vertex="1">
+                    <mxGeometry y="30" width="160" height="4" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="+ method(data)" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#00232A;fillColor=#CAF0F8;" parent="46" vertex="1">
+                    <mxGeometry y="34" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Adapter" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#00232A;fillColor=#6DC0D2;strokeWidth=2;fontSize=14;strokeColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-560" y="261" width="160" height="86" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="- adaptee: Service" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#00232A;fillColor=#CAF0F8;" parent="10" vertex="1">
+                    <mxGeometry y="30" width="160" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="10" vertex="1">
+                    <mxGeometry y="56" width="160" height="4" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="+ method(data)" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#00232A;fillColor=#CAF0F8;" parent="10" vertex="1">
+                    <mxGeometry y="60" width="160" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="Service" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#00232A;fillColor=#6DC0D2;strokeWidth=2;fontSize=14;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-320" y="260" width="200" height="86" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="..." style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#00232A;fillColor=#CAF0F8;" vertex="1" parent="60">
+                    <mxGeometry y="30" width="200" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="60">
+                    <mxGeometry y="56" width="200" height="4" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value=". service_mathod(special_data)" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#00232A;fillColor=#CAF0F8;" vertex="1" parent="60">
+                    <mxGeometry y="60" width="200" height="26" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
