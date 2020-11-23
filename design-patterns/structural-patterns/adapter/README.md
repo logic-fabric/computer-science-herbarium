@@ -10,4 +10,4 @@ It is even possible to create a two-ways adapter that can convert the calls in b
 
 ### Structure of an Adapter
 
-![Structure of an Adapter](./adapter.png)
+![Structure of an Adapter pattern](./adapter.png)

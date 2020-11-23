@@ -8,4 +8,4 @@ So, each __product__ of the Factory subclasses will have the same interface as t
 
 ### Structure of a Factory Method
 
-![Structure of a Factory Method](./factory-method.png)
+![Structure of a Factory Method pattern](./factory-method.png)
