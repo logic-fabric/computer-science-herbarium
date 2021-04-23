@@ -1,7 +1,7 @@
 import random
 
 
-def binary_search(ordered_list, item_to_find):
+def binary_search(ordered_list: list, item_to_find: [int, float, str]) -> tuple:
     """Returns a tuple (index where item was found, number of steps to find it).
     If item is not found, returns -1 for the index.
     """
@@ -36,4 +36,4 @@ if __name__ == "__main__":
     print(f"Ordered list = {list_test}")
     print(f"Number to find = {number_to_find}")
 
-    print(binary_search(list_test, number_to_find))
+    print(f"Binary search result = {binary_search(list_test, number_to_find)}")
