@@ -2,6 +2,10 @@
 
 A compilation of algorithms, interviews questions and classic patterns - Nov 2020
 
+## Algorithms
+
+- binary search
+
 ## Design Patterns
 
 ### Creational Patterns
