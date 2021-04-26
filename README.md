@@ -4,7 +4,9 @@ A compilation of algorithms, interviews questions and classic patterns - Nov 202
 
 ## Algorithms
 
-- binary search
+- binary search | O (log _n_)
+- quick sort | O (_n_ log _n_)
+- selection sort | O (_n_ ** 2)
 
 ## Design Patterns
 
@@ -43,10 +45,14 @@ A compilation of algorithms, interviews questions and classic patterns - Nov 202
 
 This folder contains a README with some __techniques and tips__ to solve code puzzles.
 
+### Puzzles with arrays
+
+- __Common elements in two sorted array__ solved in Python (TDD) and JS
+
 ### Puzzles with modulo (multiples and dividers)
 
 - __FizzBuzz__ solved in Python (TDD) and JS
 
-### Puzzles with arrays
+### Puzzles with strings
 
-- __Common elements in two sorted array__ solved in Python (TDD) and JS
+- __Palindrome__ solved un Python (TDD) and JS
