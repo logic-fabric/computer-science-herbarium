@@ -1,0 +1,22 @@
+{
+  "name": "computer-science-herbarium",
+  "version": "1.0.0",
+  "description": "A compilation of algorithms, interviews questions and classic code patterns",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logic-fabric/computer-science-herbarium.git"
+  },
+  "author": "Lowic Mangin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/logic-fabric/computer-science-herbarium/issues"
+  },
+  "homepage": "https://github.com/logic-fabric/computer-science-herbarium#readme",
+  "devDependencies": {
+    "jasmine": "^3.7.0"
+  }
+}
