@@ -1,11 +1,20 @@
-"use strict"
+"use strict";
 
-function recursiveFactorial(n) {
+const recursiveFactorial = (n) => {
   if (n < 2) {
     return 1;
   }
 
   return n * recursiveFactorial(n - 1);
-}
+};
 
-module.exports = recursiveFactorial;
+const recursiveLength = (arr) => {
+  if (JSON.stringify(arr) == JSON.stringify([])) {
+    return 0;
+  }
+
+  return 1 + recursiveLength(arr.slice(1));
+};
+
+exports.recursiveFactorial = recursiveFactorial;
+exports.recursiveLength = recursiveLength;
