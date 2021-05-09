@@ -4,7 +4,7 @@
   "description": "A compilation of algorithms, interviews questions and classic code patterns",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/logic-fabric/computer-science-herbarium#readme",
   "devDependencies": {
-    "jasmine": "^3.7.0"
+    "jasmine": "^3.7.0",
+    "jest": "^26.6.3"
   }
 }
