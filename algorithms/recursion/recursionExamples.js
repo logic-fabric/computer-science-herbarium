@@ -8,6 +8,20 @@ const recursiveFactorial = (n) => {
   return n * recursiveFactorial(n - 1);
 };
 
+const factorialPromise = (n) => {
+  return new Promise((resolve, reject) => {
+    if (n < 2) {
+      resolve(1);
+    } else {
+      resolve(
+        factorialPromise(n - 1).then(
+          (previousFactorial) => n * previousFactorial
+        )
+      );
+    }
+  });
+};
+
 const recursiveLength = (arr) => {
   if (JSON.stringify(arr) == JSON.stringify([])) {
     return 0;
@@ -17,4 +31,5 @@ const recursiveLength = (arr) => {
 };
 
 exports.recursiveFactorial = recursiveFactorial;
+exports.factorialPromise = factorialPromise;
 exports.recursiveLength = recursiveLength;
