@@ -36,6 +36,17 @@ class Fraction {
 
     return `${this.numerator}/${this.denominator}`;
   }
+
+  add(term) {
+    if (!(term instanceof Fraction)) {
+      throw new Error("The parameter of Fraction.add() must be a Fraction.");
+    }
+
+    return new Fraction(
+      this.numerator * term.denominator + this.denominator * term.numerator,
+      this.denominator * term.denominator
+    );
+  }
 }
 
 module.exports = Fraction;
