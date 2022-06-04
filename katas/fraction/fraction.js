@@ -1,5 +1,9 @@
 "use strict";
 
+function gcd(a, b) {
+  return b === 0 ? a : gcd(b, a % b);
+}
+
 class Fraction {
   /**
    * @param {number} numerator
@@ -21,8 +25,16 @@ class Fraction {
       throw new Error("The second parameter of Fraction() can not be zero.");
     }
 
-    this.numerator = numerator;
-    this.denominator = denominator;
+    this.numerator = numerator / gcd(numerator, denominator);
+    this.denominator = denominator / gcd(numerator, denominator);
+  }
+
+  toString() {
+    if (this.denominator === 1) {
+      return this.numerator.toString();
+    }
+
+    return `${this.numerator}/${this.denominator}`;
   }
 }
 
