@@ -38,8 +38,14 @@ class Fraction {
   }
 
   add(term) {
-    if (!(term instanceof Fraction)) {
-      throw new Error("The parameter of Fraction.add() must be a Fraction.");
+    if (!(term instanceof Fraction || term === parseInt(term))) {
+      throw new Error(
+        "The parameter of Fraction.add() must be a Fraction or an integer."
+      );
+    }
+
+    if (parseInt(term) === term) {
+      term = new Fraction(term, 1);
     }
 
     return new Fraction(
