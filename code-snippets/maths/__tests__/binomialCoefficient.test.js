@@ -1,6 +1,5 @@
 "use strict";
 
-const { TestScheduler } = require("@jest/core");
 const binomialCoefficient = require("../binomialCoefficient.js");
 
 describe("Test suite for binomialCoefficient():", () => {
