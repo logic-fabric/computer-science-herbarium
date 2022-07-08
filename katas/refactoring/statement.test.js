@@ -1,6 +1,6 @@
 "use strict";
 
-const statement = require("./statement-personal-refacto.js");
+const statement = require("./statement-fowler-refacto.js");
 
 const PLAYS = require("./plays.js");
 const INVOICES = require("./invoices.js");
