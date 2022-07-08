@@ -6,10 +6,10 @@ const INVOICES = require("./invoices.js");
 function statement(invoice, plays) {
   const playFor = (aPerformance) => plays[aPerformance.playID];
 
-  const amountFor = (aPerformance, play) => {
+  const amountFor = (aPerformance) => {
     let result = 0;
 
-    switch (play.type) {
+    switch (playFor(aPerformance).type) {
       case "tragedy":
         result = 40000;
 
@@ -29,7 +29,7 @@ function statement(invoice, plays) {
         break;
 
       default:
-        throw new Error(`unknown type: ${play.type}`);
+        throw new Error(`unknown type: ${playFor(aPerformance).type}`);
     }
 
     return result;
@@ -47,7 +47,7 @@ function statement(invoice, plays) {
   }).format;
 
   for (let perf of invoice.performances) {
-    const thisAmount = amountFor(perf, playFor(perf));
+    const thisAmount = amountFor(perf);
 
     // add some volume credits
     volumeCredits += Math.max(perf.audience - 30, 0);
