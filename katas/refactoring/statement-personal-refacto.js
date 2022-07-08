@@ -9,10 +9,25 @@ const formatAmount = new Intl.NumberFormat("en-US", {
   minimumFractionDigits: 2,
 }).format;
 
+function statementHeader(customer) {
+  return `Statement for ${customer}\n`;
+}
+
+function statementLineByPerformance(name, amount, audience) {
+  return `  ${name}: ${formatAmount(amount / 100)} (${audience} seats)\n`;
+}
+
+function statementSummary(totalAmount, volumeCredits) {
+  return `Amount owned is ${formatAmount(
+    totalAmount / 100
+  )}\nYou earned ${volumeCredits} credits\n`;
+}
+
 function statement(invoice, plays) {
   let totalAmount = 0;
   let volumeCredits = 0;
-  let result = `Statement for ${invoice.customer}\n`;
+
+  let result = statementHeader(invoice.customer);
 
   for (let perf of invoice.performances) {
     const play = plays[perf.playID];
@@ -29,7 +44,7 @@ function statement(invoice, plays) {
 
       case "comedy":
         thisAmount = 30000;
-        
+
         if (perf.audience > 20) {
           thisAmount += 10000 + 500 * (perf.audience - 20);
         }
@@ -42,23 +57,18 @@ function statement(invoice, plays) {
         throw new Error(`unknown type: ${play.type}`);
     }
 
+    totalAmount += thisAmount;
+
     // add some volume credits
     volumeCredits += Math.max(perf.audience - 30, 0);
 
     // print the line for this performance
-    result += `  ${play.name}: ${formatAmount(thisAmount / 100)} (${
-      perf.audience
-    } seats)\n`;
-
-    totalAmount += thisAmount;
+    result += statementLineByPerformance(play.name, thisAmount, perf.audience);
   }
 
-  result += `Amount owned is ${formatAmount(totalAmount / 100)}\n`;
-  result += `You earned ${volumeCredits} credits\n`;
+  result += statementSummary(totalAmount, volumeCredits);
 
   return result;
 }
-
-console.log(statement(INVOICES[0], PLAYS));
 
 module.exports = statement;
