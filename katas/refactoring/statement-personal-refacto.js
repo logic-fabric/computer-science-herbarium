@@ -3,16 +3,16 @@
 const PLAYS = require("./plays.js");
 const INVOICES = require("./invoices.js");
 
+const formatAmount = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 2,
+}).format;
+
 function statement(invoice, plays) {
   let totalAmount = 0;
   let volumeCredits = 0;
   let result = `Statement for ${invoice.customer}\n`;
-
-  const format = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 2,
-  }).format;
 
   for (let perf of invoice.performances) {
     const play = plays[perf.playID];
@@ -45,14 +45,14 @@ function statement(invoice, plays) {
     if ("comedy" === play.type) volumeCredits += Math.floor(perf.audience / 5);
 
     // print the line for this performance
-    result += `  ${play.name}: ${format(thisAmount / 100)} (${
+    result += `  ${play.name}: ${formatAmount(thisAmount / 100)} (${
       perf.audience
     } seats)\n`;
 
     totalAmount += thisAmount;
   }
 
-  result += `Amount owned is ${format(totalAmount / 100)}\n`;
+  result += `Amount owned is ${formatAmount(totalAmount / 100)}\n`;
   result += `You earned ${volumeCredits} credits\n`;
 
   return result;
