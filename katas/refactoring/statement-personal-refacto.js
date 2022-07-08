@@ -23,47 +23,66 @@ function statementSummary(totalAmount, volumeCredits) {
   )}\nYou earned ${volumeCredits} credits\n`;
 }
 
+function getAmountAndCreditsVolumePerPerformance(performance, performanceType) {
+  let amount = 0;
+  let volume = 0;
+
+  switch (performanceType) {
+    case "tragedy":
+      amount = 40000;
+
+      if (performance.audience > 30) {
+        amount += 1000 * (performance.audience - 30);
+      }
+      break;
+
+    case "comedy":
+      amount = 30000;
+
+      if (performance.audience > 20) {
+        amount += 10000 + 500 * (performance.audience - 20);
+      }
+      amount += 300 * performance.audience;
+
+      volume += Math.floor(performance.audience / 5);
+      break;
+
+    default:
+      throw new Error(`unknown type: ${performanceType}`);
+  }
+
+  // add some volume credits
+  volume += Math.max(performance.audience - 30, 0);
+
+  return {
+    amount,
+    volume,
+  };
+}
+
 function statement(invoice, plays) {
   let totalAmount = 0;
   let volumeCredits = 0;
 
   let result = statementHeader(invoice.customer);
 
-  for (let perf of invoice.performances) {
-    const play = plays[perf.playID];
-    let thisAmount = 0;
+  for (let performance of invoice.performances) {
+    const play = plays[performance.playID];
 
-    switch (play.type) {
-      case "tragedy":
-        thisAmount = 40000;
+    let { amount, volume } = getAmountAndCreditsVolumePerPerformance(
+      performance,
+      play.type
+    );
 
-        if (perf.audience > 30) {
-          thisAmount += 1000 * (perf.audience - 30);
-        }
-        break;
-
-      case "comedy":
-        thisAmount = 30000;
-
-        if (perf.audience > 20) {
-          thisAmount += 10000 + 500 * (perf.audience - 20);
-        }
-        thisAmount += 300 * perf.audience;
-
-        volumeCredits += Math.floor(perf.audience / 5);
-        break;
-
-      default:
-        throw new Error(`unknown type: ${play.type}`);
-    }
-
-    totalAmount += thisAmount;
-
-    // add some volume credits
-    volumeCredits += Math.max(perf.audience - 30, 0);
+    volumeCredits += volume;
+    totalAmount += amount;
 
     // print the line for this performance
-    result += statementLineByPerformance(play.name, thisAmount, perf.audience);
+    result += statementLineByPerformance(
+      play.name,
+      amount,
+      performance.audience
+    );
   }
 
   result += statementSummary(totalAmount, volumeCredits);
