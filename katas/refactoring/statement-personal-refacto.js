@@ -29,10 +29,13 @@ function statement(invoice, plays) {
 
       case "comedy":
         thisAmount = 30000;
+        
         if (perf.audience > 20) {
           thisAmount += 10000 + 500 * (perf.audience - 20);
         }
         thisAmount += 300 * perf.audience;
+
+        volumeCredits += Math.floor(perf.audience / 5);
         break;
 
       default:
@@ -41,8 +44,6 @@ function statement(invoice, plays) {
 
     // add some volume credits
     volumeCredits += Math.max(perf.audience - 30, 0);
-    // add a credit for each group of five audience members present at a comedy
-    if ("comedy" === play.type) volumeCredits += Math.floor(perf.audience / 5);
 
     // print the line for this performance
     result += `  ${play.name}: ${formatAmount(thisAmount / 100)} (${
