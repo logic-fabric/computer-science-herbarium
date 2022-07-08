@@ -3,12 +3,14 @@
 const PLAYS = require("./plays.js");
 const INVOICES = require("./invoices.js");
 
+// Utility function:
 const formatAmount = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
   minimumFractionDigits: 2,
 }).format;
 
+// Statement "String builders":
 function statementHeader(customer) {
   return `Statement for ${customer}\n`;
 }
@@ -23,26 +25,22 @@ function statementSummary(totalAmount, volumeCredits) {
   )}\nYou earned ${volumeCredits} credits\n`;
 }
 
+// Business logic:
 function getAmountAndCreditsVolumePerPerformance(performance, performanceType) {
-  let amount = 0;
-  let volume = 0;
+  let amount, volume;
+
+  volume = Math.max(performance.audience - 30, 0);
 
   switch (performanceType) {
     case "tragedy":
-      amount = 40000;
-
-      if (performance.audience > 30) {
-        amount += 1000 * (performance.audience - 30);
-      }
+      amount = 40000 + Math.max(1000 * (performance.audience - 30), 0);
       break;
 
     case "comedy":
-      amount = 30000;
-
-      if (performance.audience > 20) {
-        amount += 10000 + 500 * (performance.audience - 20);
-      }
-      amount += 300 * performance.audience;
+      amount =
+        30000 +
+        300 * performance.audience +
+        Math.max(10000 + 500 * (performance.audience - 20), 0);
 
       volume += Math.floor(performance.audience / 5);
       break;
@@ -51,43 +49,39 @@ function getAmountAndCreditsVolumePerPerformance(performance, performanceType) {
       throw new Error(`unknown type: ${performanceType}`);
   }
 
-  // add some volume credits
-  volume += Math.max(performance.audience - 30, 0);
-
-  return {
-    amount,
-    volume,
-  };
+  return { amount, volume };
 }
 
+// Main function:
 function statement(invoice, plays) {
+  let statement = statementHeader(invoice.customer);
+
   let totalAmount = 0;
   let volumeCredits = 0;
 
-  let result = statementHeader(invoice.customer);
-
   for (let performance of invoice.performances) {
-    const play = plays[performance.playID];
+    const performanceName = plays[performance.playID].name;
+    const performanceType = plays[performance.playID].type;
 
     let { amount, volume } = getAmountAndCreditsVolumePerPerformance(
       performance,
-      play.type
+      performanceType
     );
 
     volumeCredits += volume;
     totalAmount += amount;
 
     // print the line for this performance
-    result += statementLineByPerformance(
-      play.name,
+    statement += statementLineByPerformance(
+      performanceName,
       amount,
       performance.audience
     );
   }
 
-  result += statementSummary(totalAmount, volumeCredits);
+  statement += statementSummary(totalAmount, volumeCredits);
 
-  return result;
+  return statement;
 }
 
 module.exports = statement;
