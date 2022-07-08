@@ -4,6 +4,8 @@ const PLAYS = require("./plays.js");
 const INVOICES = require("./invoices.js");
 
 function statement(invoice, plays) {
+  const playFor = (aPerformance) => plays[aPerformance.playID];
+
   const amountFor = (aPerformance, play) => {
     let result = 0;
 
@@ -45,7 +47,7 @@ function statement(invoice, plays) {
   }).format;
 
   for (let perf of invoice.performances) {
-    const play = plays[perf.playID];
+    const play = playFor(perf);
 
     const thisAmount = amountFor(perf, play);
 
@@ -65,7 +67,5 @@ function statement(invoice, plays) {
 
   return result;
 }
-
-console.log(statement(INVOICES[0], PLAYS));
 
 module.exports = statement;
