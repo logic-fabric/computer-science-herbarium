@@ -1,6 +1,6 @@
-const { Shop, Item } = require("./startingCode.js");
+const { Shop, Item } = require("./refactoredCode.js");
 
-const items = [
+const GILDED_ROSE_ITEMS = [
   new Item("+5 Dexterity Vest", 10, 20),
   new Item("Aged Brie", 2, 0),
   new Item("Elixir of the Mongoose", 5, 7),
@@ -15,7 +15,7 @@ const items = [
 ];
 
 const days = Number(process.argv[2]) || 2;
-const gildedRose = new Shop(items);
+const gildedRose = new Shop(GILDED_ROSE_ITEMS);
 
 for (let day = 0; day < days; day++) {
   console.log(`\n-------- day ${day} --------`);
@@ -26,7 +26,7 @@ for (let day = 0; day < days; day++) {
     )} | ${"quality".padEnd(8, " ")}`
   );
 
-  items.forEach((item) =>
+  GILDED_ROSE_ITEMS.forEach((item) =>
     console.log(
       `${item.name.padEnd(42, " ")} | ${item.sellIn
         .toString()
