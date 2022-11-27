@@ -24,4 +24,9 @@ describe("Test suite for bubbleSort():", () => {
     expect(bubbleSort([12, 2, 33, 7])).toEqual([2, 7, 12, 33]);
     expect(bubbleSort([4, -2, 7])).toEqual([-2, 4, 7]);
   });
+
+  test("with array containing doublons", () => {
+    expect(bubbleSort([7, 12, 2, 33, 7])).toEqual([2, 7, 7, 12, 33]);
+    expect(bubbleSort([4, 7, -2, 7])).toEqual([-2, 4, 7, 7]);
+  });
 });
