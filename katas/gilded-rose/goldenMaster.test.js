@@ -88,7 +88,7 @@ describe("Gilded Rose golden master", function () {
     expect(itemAtDay20.quality).toBe(0);
   });
 
-  it("Sulfuras V1, Hand of Ragnarok, updating", function () {
+  it("Sulfuras V1, Hand of Ragnaros, updating", function () {
     const itemAtDay1 = getItemStateAtSpecificDay(SULFURAS_1, 1);
 
     expect(itemAtDay1.name).toBe(SULFURAS_1.name);
@@ -106,7 +106,7 @@ describe("Gilded Rose golden master", function () {
     expect(itemAtDay20.quality).toBe(80);
   });
 
-  it("Sulfuras V2, Hand of Ragnarok, updating", function () {
+  it("Sulfuras V2, Hand of Ragnaros, updating", function () {
     const itemAtDay1 = getItemStateAtSpecificDay(SULFURAS_2, 1);
 
     expect(itemAtDay1.name).toBe(SULFURAS_2.name);
