@@ -48,23 +48,16 @@ class Shop {
       return item;
     }
 
-    if (item.quality > 0) {
-      item.quality--;
-    } else if (item.quality < 50) {
-      item.quality++;
-    }
-
     item.sellIn--;
+    item.quality--;
 
     if (item.sellIn < 0) {
-      if (item.quality > 0) {
-        item.quality--;
-      } else {
-        item.quality = 0;
-      }
-
-      return item;
+      item.quality--;
     }
+
+    item.quality = Math.max(0, item.quality);
+
+    return item;
   }
 
   updateQuality() {
