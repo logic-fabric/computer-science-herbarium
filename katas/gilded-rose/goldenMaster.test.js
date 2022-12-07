@@ -20,6 +20,7 @@ const BACKSTAGE_PASS_3 = new Item(
   5,
   49
 );
+const CONJURED_MANA_CAKE = new Item("Conjured Mana Cake", 3, 6);
 
 function getItemStateAtSpecificDay(item, day) {
   const gildedRose = new Shop([new Item(item.name, item.sellIn, item.quality)]);
@@ -33,8 +34,8 @@ function getItemStateAtSpecificDay(item, day) {
   return gildedRose.items[0];
 }
 
-describe("Gilded Rose golden master", function () {
-  it("+5 Dexterity Vest updating", function () {
+describe("Gilded Rose golden master", () => {
+  test("+5 Dexterity Vest updating", () => {
     const itemAtDay1 = getItemStateAtSpecificDay(DEXTERITY_VEST, 1);
 
     expect(itemAtDay1.name).toBe(DEXTERITY_VEST.name);
@@ -52,7 +53,7 @@ describe("Gilded Rose golden master", function () {
     expect(itemAtDay20.quality).toBe(0);
   });
 
-  it("Aged Brie updating", function () {
+  test("Aged Brie updating", () => {
     const itemAtDay1 = getItemStateAtSpecificDay(AGED_BRIE, 1);
 
     expect(itemAtDay1.name).toBe(AGED_BRIE.name);
@@ -70,7 +71,7 @@ describe("Gilded Rose golden master", function () {
     expect(itemAtDay20.quality).toBe(38);
   });
 
-  it("Elixir of the Mongoose updating", function () {
+  test("Elixir of the Mongoose updating", () => {
     const itemAtDay1 = getItemStateAtSpecificDay(ELIXIR_OF_THE_MONGOOSE, 1);
 
     expect(itemAtDay1.name).toBe(ELIXIR_OF_THE_MONGOOSE.name);
@@ -88,7 +89,7 @@ describe("Gilded Rose golden master", function () {
     expect(itemAtDay20.quality).toBe(0);
   });
 
-  it("Sulfuras V1, Hand of Ragnaros, updating", function () {
+  test("Sulfuras V1, Hand of Ragnaros, updating", () => {
     const itemAtDay1 = getItemStateAtSpecificDay(SULFURAS_1, 1);
 
     expect(itemAtDay1.name).toBe(SULFURAS_1.name);
@@ -106,7 +107,7 @@ describe("Gilded Rose golden master", function () {
     expect(itemAtDay20.quality).toBe(80);
   });
 
-  it("Sulfuras V2, Hand of Ragnaros, updating", function () {
+  test("Sulfuras V2, Hand of Ragnaros, updating", () => {
     const itemAtDay1 = getItemStateAtSpecificDay(SULFURAS_2, 1);
 
     expect(itemAtDay1.name).toBe(SULFURAS_2.name);
@@ -124,7 +125,7 @@ describe("Gilded Rose golden master", function () {
     expect(itemAtDay20.quality).toBe(80);
   });
 
-  it("Backstage pass No. 1 updating", function () {
+  test("Backstage pass No. 1 updating", () => {
     const itemAtDay1 = getItemStateAtSpecificDay(BACKSTAGE_PASS_1, 1);
 
     expect(itemAtDay1.name).toBe(BACKSTAGE_PASS_1.name);
@@ -142,7 +143,7 @@ describe("Gilded Rose golden master", function () {
     expect(itemAtDay20.quality).toBe(0);
   });
 
-  it("Backstage pass No. 2 updating", function () {
+  test("Backstage pass No. 2 updating", () => {
     const itemAtDay1 = getItemStateAtSpecificDay(BACKSTAGE_PASS_2, 1);
 
     expect(itemAtDay1.name).toBe(BACKSTAGE_PASS_2.name);
@@ -160,7 +161,7 @@ describe("Gilded Rose golden master", function () {
     expect(itemAtDay20.quality).toBe(0);
   });
 
-  it("Backstage pass No. 3 updating", function () {
+  test("Backstage pass No. 3 updating", () => {
     const itemAtDay1 = getItemStateAtSpecificDay(BACKSTAGE_PASS_3, 1);
 
     expect(itemAtDay1.name).toBe(BACKSTAGE_PASS_3.name);
@@ -175,6 +176,24 @@ describe("Gilded Rose golden master", function () {
     const itemAtDay20 = getItemStateAtSpecificDay(BACKSTAGE_PASS_3, 20);
 
     expect(itemAtDay20.sellIn).toBe(-15);
+    expect(itemAtDay20.quality).toBe(0);
+  });
+
+  test("Conjured Mana Cake updating", () => {
+    const itemAtDay1 = getItemStateAtSpecificDay(CONJURED_MANA_CAKE, 1);
+
+    expect(itemAtDay1.name).toBe(CONJURED.name);
+    expect(itemAtDay1.sellIn).toBe(2);
+    expect(itemAtDay1.quality).toBe(4);
+
+    const itemAtDay10 = getItemStateAtSpecificDay(CONJURED_MANA_CAKE, 10);
+
+    expect(itemAtDay10.sellIn).toBe(-7);
+    expect(itemAtDay10.quality).toBe(0);
+
+    const itemAtDay20 = getItemStateAtSpecificDay(CONJURED_MANA_CAKE, 20);
+
+    expect(itemAtDay20.sellIn).toBe(-17);
     expect(itemAtDay20.quality).toBe(0);
   });
 });
