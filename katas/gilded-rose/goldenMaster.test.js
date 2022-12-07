@@ -20,7 +20,6 @@ const BACKSTAGE_PASS_3 = new Item(
   5,
   49
 );
-const CONJURED_MANA_CAKE = new Item("Conjured Mana Cake", 3, 6);
 
 function getItemStateAtSpecificDay(item, day) {
   const gildedRose = new Shop([new Item(item.name, item.sellIn, item.quality)]);
@@ -178,22 +177,8 @@ describe("Gilded Rose golden master", () => {
     expect(itemAtDay20.sellIn).toBe(-15);
     expect(itemAtDay20.quality).toBe(0);
   });
-
-  test("Conjured Mana Cake updating", () => {
-    const itemAtDay1 = getItemStateAtSpecificDay(CONJURED_MANA_CAKE, 1);
-
-    expect(itemAtDay1.name).toBe(CONJURED.name);
-    expect(itemAtDay1.sellIn).toBe(2);
-    expect(itemAtDay1.quality).toBe(4);
-
-    const itemAtDay10 = getItemStateAtSpecificDay(CONJURED_MANA_CAKE, 10);
-
-    expect(itemAtDay10.sellIn).toBe(-7);
-    expect(itemAtDay10.quality).toBe(0);
-
-    const itemAtDay20 = getItemStateAtSpecificDay(CONJURED_MANA_CAKE, 20);
-
-    expect(itemAtDay20.sellIn).toBe(-17);
-    expect(itemAtDay20.quality).toBe(0);
-  });
 });
+
+module.exports = {
+  getItemStateAtSpecificDay,
+};
