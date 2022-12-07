@@ -45,9 +45,13 @@ class Shop {
 
       default:
         if (item.sellIn < 0) {
-          item.quality -= 2;
+          item.quality -= item.name.toLowerCase().includes("conjured")
+            ? 4
+            : 2;
         } else {
-          item.quality -= 1;
+          item.quality -= item.name.toLowerCase().includes("conjured")
+            ? 2
+            : 1;
         }
 
         item.quality = Math.max(0, item.quality);
