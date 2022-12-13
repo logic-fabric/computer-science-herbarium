@@ -12,10 +12,10 @@ function isValidForLuhnFormula(n) {
     if (i % 2 === 0) {
       sum += +digits[i];
     } else {
-      const doubledDigit = (+digits[i] * 2).toString();
+      const doubledDigit = +digits[i] * 2;
 
       const transformedDigit =
-        doubledDigit < 10 ? +doubledDigit : +doubledDigit[0] + +doubledDigit[1];
+        doubledDigit < 10 ? doubledDigit : doubledDigit - 9;
 
       sum += transformedDigit;
     }
