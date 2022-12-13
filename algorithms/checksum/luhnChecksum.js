@@ -1,6 +1,6 @@
 "use strict";
 
-function isValidForLuhnFormula(n) {
+function isValidForLuhnChecksum(n) {
   if (isNaN(n) || parseInt(n) !== n) {
     throw "The parameter must be an integer.";
   }
@@ -24,4 +24,4 @@ function isValidForLuhnFormula(n) {
   return sum % 10 === 0;
 }
 
-module.exports = isValidForLuhnFormula;
+module.exports = isValidForLuhnChecksum;
